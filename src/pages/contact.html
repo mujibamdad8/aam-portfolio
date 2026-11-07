@@ -1,0 +1,79 @@
+---
+title: Contact | Mujib Amdad, Web Developer &amp; UI/UX Designer
+description: Tell me about your store or design project. I design UI/UX in Figma and build fast, responsive WordPress, WooCommerce and Shopify stores, and usually reply within one business day.
+scripts: vendor/gsap.min.js vendor/ScrollTrigger.min.js vendor/lenis.min.js v2.js
+---
+<!-- CONTACT -->
+<section class="ct">
+  <h1 class="ct-title" data-reveal>Contact</h1>
+
+  <form
+    class="ct-form"
+    name="contact"
+    method="POST"
+    action="thanks.html"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+    id="cform"
+  >
+    <input type="hidden" name="form-name" value="contact">
+    <p class="hp"><label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+    <div class="ct-field" data-fade>
+      <label class="sr" for="f-name">Name</label>
+      <input id="f-name" name="name" required autocomplete="name" placeholder="Name*">
+    </div>
+    <div class="ct-field" data-fade>
+      <label class="sr" for="f-mail">Email</label>
+      <input
+        id="f-mail"
+        type="email"
+        name="email"
+        required
+        autocomplete="email"
+        placeholder="Email*"
+      >
+    </div>
+    <div class="ct-field" data-fade>
+      <label class="sr" for="f-topic">Topic</label>
+      <select id="f-topic" name="topic" required>
+        <option value="" disabled selected>Topics*</option>
+        <option>UI/UX Design</option>
+        <option>New store build</option>
+        <option>Figma to website</option>
+        <option>Product listing</option>
+        <option>Speed &amp; payments setup</option>
+        <option>Something else</option>
+      </select>
+    </div>
+    <div class="ct-field" data-fade>
+      <label class="sr" for="f-phone">Phone number</label>
+      <input id="f-phone" type="tel" name="phone" autocomplete="tel" placeholder="Phone number">
+    </div>
+    <div class="ct-field ct-wide" data-fade>
+      <label class="sr" for="f-msg">Message</label>
+      <textarea id="f-msg" name="message" required placeholder="Message*"></textarea>
+    </div>
+    <div class="ct-submit" data-fade>
+      <button class="pill" type="submit">Submit <span>→</span></button>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+    </div>
+  </form>
+
+  <p class="ct-note" data-lines>I believe a store should look right and work right, and I love building them with brands that feel the same. Let's connect.</p>
+
+  <div class="ct-info">
+    <div data-fade>
+      <span class="ct-label">Project enquiries</span>
+      <a href="mailto:mujibamdad8@gmail.com">mujibamdad8@gmail.com</a>
+    </div>
+    <div data-fade>
+      <span class="ct-label">Hire me on</span>
+      <a
+        href="https://www.upwork.com/freelancers/~01480c103718bfda8d"
+        target="_blank"
+        rel="noopener"
+      >Upwork</a>
+      <a href="https://www.linkedin.com/in/mujibamdad" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
