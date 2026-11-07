@@ -178,6 +178,17 @@ section {
   filter: invert(1);
 }
 
+/* wordmark mask: on the home page it reveals and exits with the hero intro (v2.js) */
+.logo-word {
+  display: block;
+  overflow: hidden;
+}
+
+/* pages without a hero show the wordmark in the footer, so the header keeps only the M mark */
+body:not(:has(.hero)) .logo-word {
+  display: none;
+}
+
 .hdr nav {
   display: flex;
   gap: clamp(18px,4.5vw,76px);

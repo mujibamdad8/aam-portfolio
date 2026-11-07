@@ -237,6 +237,7 @@
 
   /* 3) intro text: masked line reveal on load and on every return to the hero; year wipes in */
   var introEl = $(".hero-intro");
+  var logoWord = $(".logo-word"); /* header wordmark: same reveal and exit as the intro, so it only shows in the hero */
   var introST = null;
   /* wrap each visual line in a mask; the full text lives in aria-label so it survives re-splits */
   function splitLines(el) {
@@ -279,8 +280,8 @@
     /* leaving the hero fades the intro out; coming back replays the line reveal */
     introST = ST.create({
       trigger: ".hero", start: "top top", end: "35% top",
-      onLeave: function () { gsap.to(introEl, { autoAlpha: 0, duration: 0.4, ease: "power2.out", overwrite: true }); },
-      onEnterBack: function () { revealLines(introEl); }
+      onLeave: function () { gsap.to([introEl, logoWord], { autoAlpha: 0, duration: 0.4, ease: "power2.out", overwrite: true }); },
+      onEnterBack: function () { revealLines(introEl); revealLines(logoWord); }
     });
   }
 
@@ -403,8 +404,8 @@
     if (started) return; started = true;
     if (!hero) { initSections(); return; }
     var lines = splitLines(introEl);
-    gsap.set(introEl, { autoAlpha: introST.progress < 1 ? 1 : 0 }); /* stay hidden if the page loads already scrolled past the hero */
-    heroTl.from(lines, { yPercent: 110, duration: 0.9, ease: "power4.out", stagger: 0.08 }, 1.4).play();
+    gsap.set([introEl, logoWord], { autoAlpha: introST.progress < 1 ? 1 : 0 }); /* stay hidden if the page loads already scrolled past the hero */
+    heroTl.from([$(".line-in", logoWord)].concat(lines), { yPercent: 110, duration: 0.9, ease: "power4.out", stagger: 0.08 }, 1.4).play();
     initSections();
   }
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(startHero);
